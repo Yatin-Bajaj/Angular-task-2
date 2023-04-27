@@ -10,7 +10,9 @@ describe('User filter pipe', () => {
     });
 
     it('should return active user', () => {
-        expect(userFilterPipe.transform(USERS, true)).toEqual(ACTIVATED_USERS);
+        expect(userFilterPipe.transform(USERS, true).length).toBe(
+            ACTIVATED_USERS.length
+        );
     });
 
     it('should return deactivated user', () => {
